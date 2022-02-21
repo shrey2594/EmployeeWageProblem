@@ -12,10 +12,18 @@ namespace EmployeeWageProblem
         {
             int wagePerHour = 20;
             int fullDayHour = 8;
+            int partTimeHour = 4;
             int moneyEarned;
             if(Check.checkPresentAbsent()==true)
             {
-                moneyEarned = wagePerHour*fullDayHour;
+                if (CheckPartTime.PartTime()==true)
+                {
+                    moneyEarned = wagePerHour * partTimeHour;
+                }
+                else
+                {
+                    moneyEarned = wagePerHour * fullDayHour; 
+                }
                 Console.WriteLine("The employee earned "+moneyEarned+" throughout the day.");
             }
             else
